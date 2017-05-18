@@ -1,16 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title>Corcoran Labs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- jQuery lib -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- jQuery UI lib -->
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!-- myCSS -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="build/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- fontawsome -->
@@ -23,22 +25,22 @@
             <i class="fa fa-times" aria-hidden="true"></i>
         </div>
         <ul>
-            <li><a onclick="goTo('about-us')">About Us</a></li>
-            <li><a href="">Musings</a></li>
-            <li><a onclick="goTo('hackathon')">Events</a></li>
-            <li><a onclick="goTo('contact')">Contact</a></li>
+            <li><a class="nav-item" onclick="goTo('about-us')">About Us</a></li>
+            <li><a class="nav-item" onclick="goTo('musing')">Musings</a></li>
+            <li><a class="nav-item" onclick="goTo('hackathon')">Events</a></li>
+            <li><a class="nav-item" onclick="goTo('contact')">Contact</a></li>
         </ul>
     </div>
     <div class="header">
         <div class="logo">
-            <img src="img/logo_w.png" alt="">
+            <img src="build/img/logo_w.png" alt="">
         </div>
         <div class="navigation">
             <ul>
-                <li><a onclick="goTo('about-us')">About Us</a></li>
-                <li><a href="">Musings</a></li>
-                <li><a onclick="goTo('hackathon')">Events</a></li>
-                <li><a onclick="goTo('contact')">Contact</a></li>
+                <li><a class="nav-item" onclick="goTo('about-us')">About Us</a></li>
+                <li><a class="nav-item" onclick="goTo('musing')">Musings</a></li>
+                <li><a class="nav-item" onclick="goTo('hackathon')">Events</a></li>
+                <li><a class="nav-item" onclick="goTo('contact')">Contact</a></li>
             </ul>
             <div class="mobile-menu-trigger">
                 <i class="fa fa-bars" aria-hidden="true"></i>
@@ -47,9 +49,10 @@
     </div>
     <div class="bkg-video-section beginning">
         <div class="landing_background-wrapper">
+            <div class="video-overlay"></div>
             <video class="landing_background" preload="" muted="" autoplay="" loop="">
-                <source src="bkg-video/scene1_background.webm" type="video/webm">
-                <source src="bkg-video/scene1_background.mp4" type="video/mp4">
+                <source src="build/bkg-video/scene1_background.webm" type="video/webm">
+                <source src="build/bkg-video/scene1_background.mp4" type="video/mp4">
             </video>
         </div>
         <div class="text-over-video Center">
@@ -192,61 +195,74 @@
         </div>
         <div class="clear"></div>
     </div>
-    <div class="testimonial-section">
-        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+    <div class="product-section" id="musing">
+        <div id="product-carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#testimonial-carousel" data-slide-to="0" class="active">
+                <li data-target="#product-carousel" data-slide-to="0" class="active">
                     <div class="video-tag">Data</div>
                 </li>
-                <li data-target="#testimonial-carousel" data-slide-to="1">
+                <li data-target="#product-carousel" data-slide-to="1">
                     <div class="video-tag">Product</div>
                 </li>
-                <li data-target="#testimonial-carousel" data-slide-to="2">
+                <li data-target="#product-carousel" data-slide-to="2">
                     <div class="video-tag">Engineering</div>
                 </li>
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
+                <div class="carousel-item active">
                     <div class="bkg-video-section ">
                         <div class="landing_background-wrapper">
+                            <div class="video-overlay"></div>
                             <video class="landing_background" preload="" muted="" autoplay="" loop="">
-                                <source src="bkg-video/scene1_background.webm" type="video/webm">
-                                <source src="bkg-video/scene1_background.mp4" type="video/mp4">
+                                <source src="build/bkg-video/scene1_background.webm" type="video/webm">
+                                <source src="build/bkg-video/scene1_background.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="text-over-video  Left">
-                            <div class=" FadeIn-Text title">We are a strategic product development group that builds the future of real estate.</div>
-                            <div class="read-more FadeIn-Text-Daley"><a href="">Read more</a></div>
+                            <div class="blog  FadeIn-Text">
+                                <div class=" title">We are a strategic product development group that builds the future of real estate.</div>
+                                <div class="read-more"><a href="">Read more</a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="carousel-item">
                     <div class="bkg-video-section">
                         <div class="landing_background-wrapper">
+                            <div class="video-overlay"></div>
                             <video class="landing_background" preload="" muted="" autoplay="" loop="">
-                                <source src="bkg-video/scene1_background.webm" type="video/webm">
-                                <source src="bkg-video/scene1_background.mp4" type="video/mp4">
+                                <source src="build/bkg-video/scene1_background.webm" type="video/webm">
+                                <source src="build/bkg-video/scene1_background.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="text-over-video Left">
-                            <div class="FadeIn-Text title">We are a strategic product development group that builds the future of real estate.</div>
-                            <div class="read-more FadeIn-Text-Daley">Read more</div>
+                            <div class="blog FadeIn-Text">
+                                <div class=" title">Title of Blog 1: We are a strategic product development group that builds the future of real estate.</div>
+                                <div class="read-more">Read more</div>
+                            </div>
+                            <div class="blog  FadeIn-Text-Daley">
+                                <div class="title">Title of Blog 2: We are a strategic product development group that builds the future of real estate.</div>
+                                <div class="read-more">Read more</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="carousel-item">
                     <div class="bkg-video-section">
                         <div class="landing_background-wrapper">
+                            <div class="video-overlay"></div>
                             <video class="landing_background" preload="" muted="" autoplay="" loop="">
-                                <source src="bkg-video/scene1_background.webm" type="video/webm">
-                                <source src="bkg-video/scene1_background.mp4" type="video/mp4">
+                                <source src="build/bkg-video/scene1_background.webm" type="video/webm">
+                                <source src="build/bkg-video/scene1_background.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="text-over-video Left">
-                            <div class="FadeIn-Text title">We are a strategic product development group that builds the future of real estate.</div>
-                            <div class="read-more FadeIn-Text-Daley">Read more</div>
+                            <div class="blog  FadeIn-Text">
+                                <div class=" title">We are a strategic product development group that builds the future of real estate.</div>
+                                <div class="read-more"><a href="">Read more</a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,16 +270,42 @@
         </div>
     </div>
     <div class="hackathon-section" id="hackathon">
-        <div class="FadeIn-Text title">
-            We host Hackathon monthly, next Hackathon will be on Apr. 30, 2017
-        </div>
-        <button class="FadeIn-Text-Daley">Join our next hackathon</button>
+        <code class="">
+            <span class="symbol">&lt;</span><span class="html-tag">event</span> <span class="html-property">class</span><span class="symbol">="</span><span class="class-name">Next_Hackathon</span><span class="symbol">"</span><span class="symbol">&gt;</span>
+        </code>
+        <code class=" indented">
+            <span class="key-info">We host hackathon monthly!</span>
+        </code>
+        <code>
+            <span class="symbol">&lt;/</span><span class="html-tag">event</span><span class="symbol">&gt;</span>
+      
+        </code>
+        <br>
+        <code class="">
+            <span class="symbol">.</span><span class="class-name">Next_Hackathon</span>{
+            </code>
+        <code class=" indented">
+            <span class="css-property">location:</span> <span class="value key-info">660 Madison Ave.</span>;
+        </code>
+        <code class=" indented">
+                <span class="css-property">date:</span> <span class="value key-info">December 28th 2088</span>; <span class="commented-out">//Wed.</span>
+        </code>
+        <code class=" indented">
+                <span class="css-property">topic:</span> <span class="value key-info">dashboard</span>;
+        </code>
+        <code class="">
+            }
+        </code>
+        <button>
+            JOIN OUR HACKATHON
+        </button>
     </div>
     <div class="bkg-video-section ending" id="contact">
         <div class="landing_background-wrapper">
+            <div class="video-overlay"></div>
             <video class="landing_background" preload="" muted="" autoplay="" loop="">
-                <source src="bkg-video/scene1_background.webm" type="video/webm">
-                <source src="bkg-video/scene1_background.mp4" type="video/mp4">
+                <source src="build/bkg-video/scene1_background.webm" type="video/webm">
+                <source src="build/bkg-video/scene1_background.mp4" type="video/mp4">
             </video>
         </div>
         <div class="text-over-video Left">
@@ -275,8 +317,9 @@
         </div>
     </div>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="animations.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="build/animations.js"></script>
+    <!-- <script type="text/javascript" src="animations.js"></script> -->
 </body>
 
 </html>

@@ -132,7 +132,7 @@
   }
 }
 button {
-  background: #333333;
+  background: #111;
   padding: 10px 30px;
   color: white;
   font-size: 14px;
@@ -142,8 +142,6 @@ button {
   outline: none;
 }
 body {
-  max-width: 1440px;
-  margin: auto;
   font-family: 'Open Sans', sans-serif;
 }
 body .line {
@@ -159,6 +157,7 @@ body .line-drawing {
 }
 body .bkg-video-section {
   position: relative;
+  width: 100%;
 }
 body .bkg-video-section .landing_background-wrapper {
   width: 100%;
@@ -166,6 +165,24 @@ body .bkg-video-section .landing_background-wrapper {
   height: 700px;
   overflow: hidden;
   z-index: -2;
+}
+@media only screen and (min-width: 1441px) {
+  body .bkg-video-section .landing_background-wrapper {
+    height: 950px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  body .bkg-video-section .landing_background-wrapper {
+    height: 600px;
+  }
+}
+body .bkg-video-section .landing_background-wrapper .video-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  opacity: 0.35;
+  z-index: 3000;
 }
 body .bkg-video-section .landing_background-wrapper .landing_background {
   width: 100%;
@@ -198,7 +215,7 @@ body .mobile-menu-trigger {
   }
 }
 body .navigation-mobile {
-  background-color: #333333;
+  background-color: rgba(17, 17, 17, 0.9);
   display: none;
   position: fixed;
   width: 100%;
@@ -223,18 +240,20 @@ body .navigation-mobile ul li {
   font-size: 24px;
   padding: 11px;
 }
-body .navigation-mobile ul li a {
+body .navigation-mobile ul li .nav-item {
   padding: 15px 20px;
   display: block;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   cursor: pointer;
+}
+body .navigation-mobile ul li .nav-item:hover {
+  color: white;
 }
 body .header {
   padding: 5px 20px;
   position: absolute;
   width: 100%;
-  max-width: 1440px;
   z-index: 3000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -262,15 +281,18 @@ body .header .navigation ul {
 body .header .navigation ul li {
   display: inline-block;
 }
-body .header .navigation ul li a {
+body .header .navigation ul li .nav-item {
   padding: 15px 20px;
   display: block;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   cursor: pointer;
 }
+body .header .navigation ul li .nav-item:hover {
+  color: white;
+}
 body .beginning .landing_title {
-  font-size: 67px;
+  font-size: 60px;
   width: 70%;
   margin: auto;
 }
@@ -287,6 +309,11 @@ body .beginning .landing_title {
 @media only screen and (max-width: 600px) {
   body .beginning .landing_title {
     font-size: 25px;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  body .beginning .landing_title {
+    width: 90%;
   }
 }
 body .beginning .landing_info {
@@ -312,9 +339,10 @@ body .beginning .landing_info {
     font-size: 14px;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1441px) {
   body .beginning .landing_info {
-    font-size: 23px;
+    font-size: 25px;
+    width: 90%;
   }
 }
 body .highlight-section {
@@ -359,78 +387,141 @@ body .highlight-section .item-wrapper .icon {
 body .highlight-section .item-wrapper .icon svg {
   height: 85px;
 }
-body .testimonial-section .carousel-inner .item .title {
+body .product-section .carousel-inner .carousel-item .blog {
+  margin: 20px 0px;
+}
+body .product-section .carousel-inner .carousel-item .title {
   font-size: 25px;
   font-weight: 300;
   letter-spacing: 0.5px;
 }
-body .testimonial-section .carousel-inner .item .read-more {
+@media only screen and (max-width: 768px) {
+  body .product-section .carousel-inner .carousel-item .title {
+    font-size: 18px;
+  }
+}
+body .product-section .carousel-inner .carousel-item .read-more {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1.5px;
-  margin-top: 35px;
+  margin-top: 8px;
   font-weight: 300;
 }
-body .testimonial-section .carousel-inner .item .read-more a {
+body .product-section .carousel-inner .carousel-item .read-more a {
   color: white;
   text-decoration: none;
 }
-body .testimonial-section .carousel-indicators {
-  bottom: 120px;
-  text-align: left;
+body .product-section .carousel-indicators {
   margin-left: 80px;
-  width: 50%;
-  left: auto;
 }
 @media only screen and (max-width: 1000px) {
-  body .testimonial-section .carousel-indicators {
+  body .product-section .carousel-indicators {
     width: calc(100% - 2 * 80px);
   }
 }
 @media only screen and (max-width: 768px) {
-  body .testimonial-section .carousel-indicators {
+  body .product-section .carousel-indicators {
     width: calc(100% - 2 * 40px);
     margin-left: 40px;
   }
 }
-body .testimonial-section .carousel-indicators li {
-  background-color: white;
-  opacity: 0.7;
-  display: inline-block;
-  width: 33%;
-  float: left;
-  height: 1px;
+body .product-section .carousel-indicators li {
+  background-color: transparent;
+  max-width: 33%;
+  height: 100px;
   text-indent: 0px;
   cursor: pointer;
-  border: none;
-  border-radius: 0px;
-  margin: 0px;
+  border-top: 3px solid white;
+  opacity: 0.6;
+  margin-left: 2px;
+  margin-right: 2px;
 }
-body .testimonial-section .carousel-indicators li.active {
-  background-color: white;
-  height: 6px;
+@media only screen and (max-width: 500px) {
+  body .product-section .carousel-indicators li {
+    max-width: 100%;
+  }
+}
+body .product-section .carousel-indicators li:hover {
+  opacity: 0.8;
+}
+body .product-section .carousel-indicators li.active {
   opacity: 1;
 }
-body .testimonial-section .carousel-indicators li .video-tag {
-  padding-top: 20px;
-  padding-bottom: 20px;
+body .product-section .carousel-indicators li .video-tag {
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
 body .hackathon-section {
   text-align: center;
-  padding: 200px 100px;
+  padding: 100px 100px;
 }
 @media only screen and (max-width: 600px) {
   body .hackathon-section {
-    padding: 200px 30px;
+    padding: 80px 30px;
   }
 }
-body .hackathon-section .title {
-  font-size: 25px;
-  margin-bottom: 40px;
-  color: #5e5e5e;
+body .hackathon-section button {
+  width: 480px;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 500px) {
+  body .hackathon-section button {
+    width: 100%;
+  }
+}
+body .hackathon-section code {
+  text-align: left;
+  font-size: 22px;
+  line-height: 1.5;
+  padding: 5px 0px;
+  display: block;
+  background: transparent;
+  color: #9c9c9c;
+  width: 480px;
+  margin: auto;
+}
+@media only screen and (max-width: 500px) {
+  body .hackathon-section code {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+body .hackathon-section code.indented {
+  padding-left: 20px;
+}
+body .hackathon-section code .css-property {
+  color: forestgreen;
+}
+@media only screen and (max-width: 500px) {
+  body .hackathon-section code .css-property {
+    display: block;
+  }
+}
+body .hackathon-section code .html-property {
+  color: orange;
+}
+body .hackathon-section code .value {
+  color: darkorange;
+}
+body .hackathon-section code .commented-out {
+  color: #ccc;
+}
+body .hackathon-section code .class-name {
+  color: rebeccapurple;
+}
+body .hackathon-section code .symbol {
+  color: deepskyblue;
+}
+body .hackathon-section code .html-tag {
+  color: orangered;
+}
+@media only screen and (max-width: 500px) {
+  body .hackathon-section code .key-info {
+    font-size: 20px;
+  }
 }
 body .ending .title {
   font-size: 27px;
